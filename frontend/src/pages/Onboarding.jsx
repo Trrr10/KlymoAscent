@@ -8,6 +8,7 @@ export default function Onboarding() {
   const [gender, setGender] = useState(null);
 
   return (
+
     <>
       {step === 0 && <Rules onAccept={() => setStep(1)} />}
       {step === 1 && (
@@ -31,5 +32,6 @@ export default function Onboarding() {
         />
       )}
     </>
+
   );
 }

@@ -5,15 +5,13 @@ export default function ProfileSetup({ gender, onDone }) {
   const [bio, setBio] = useState("");
 
   const submit = () => {
-    const profile = { nickname, bio };
-    localStorage.setItem("profile", JSON.stringify(profile));
-    onDone(profile);
+    onDone({ nickname, bio });
   };
 
   return (
-    <div>
-      <h2>Create Profile</h2>
-      <p>Verified as: {gender}</p>
+    <div className="step">
+      <h1>Create Profile</h1>
+      <p className="subtitle">Verified as: <b>{gender}</b></p>
 
       <input
         placeholder="Nickname"
@@ -28,7 +26,9 @@ export default function ProfileSetup({ gender, onDone }) {
         onChange={(e) => setBio(e.target.value)}
       />
 
-      <button onClick={submit}>Finish</button>
+      <button onClick={submit} disabled={!nickname}>
+        Finish Setup
+      </button>
     </div>
   );
 }
