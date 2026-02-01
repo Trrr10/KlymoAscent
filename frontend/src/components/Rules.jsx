@@ -1,4 +1,4 @@
-export default function Rules({ onNext }) {
+export default function Rules({ onAccept }) {
   return (
     <div>
       <h1>Privacy & Rules</h1>
@@ -8,7 +8,7 @@ export default function Rules({ onNext }) {
         <li>Images are deleted immediately</li>
       </ul>
 
-      <button onClick={onNext}>I Agree</button>
+      <button onClick={onAccept}>I Agree</button>
     </div>
   );
 }
