@@ -5,7 +5,7 @@ function App() {
   useEffect(() => {
     let deviceId = localStorage.getItem("deviceId");
     if (!deviceId) {
-      deviceId = crypto.randomUgit add -AUID();
+      deviceId = crypto.randomUUID();
       localStorage.setItem("deviceId", deviceId);
     }
     console.log("Device ID:", deviceId);
