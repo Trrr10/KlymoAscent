@@ -1,4 +1,7 @@
 import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import HomePage from "./pages/HomePage";
 import Onboarding from "./pages/Onboarding";
 
 function App() {
@@ -12,9 +15,14 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <Onboarding />
-    </div>
+    <BrowserRouter>
+      <div style={{ padding: "20px" }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
